@@ -1,7 +1,7 @@
 
 
               <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border border-dark">
-                <img src="Images/default-user.png" class="navbar-brand border border-primary p-0 m-1" href="#">Bem vindo, Roberto!</a>
+                <img src="Images/default-user.png" class="navbar-brand border border-primary p-0 m-1" href="#">Bem vindo, <?php echo isset($_SESSION['u_user'])? $_SESSION['u_user']: '';?>!</a>
                 
               
                   <ul class="navbar-nav mr-auto">

@@ -1,0 +1,5 @@
+Script do banco está localizado na pasta Script do banco
+
+Para funcionar o projeto deve incluir o arquivo na pasta HTDOCS do XAMPP
+Entrar no caminho projetoV6.6/php/ e modificar o connect.php caso você tenha um senha/usuario diferente no XAMPP
+Após isso, basta deixar ligado o MySql e Apache no XAMPP e usar a URL http://127.0.0.1/Projeto%20V6.6/Index.php           

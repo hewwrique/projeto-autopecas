@@ -8,7 +8,7 @@
             <p> TODOS OS DIREITOS RESERVADOS </p>
         </div>
         <div class="" class="m-1">
-            <p> Versão 6.4 </p>
+            <p> Versão 6.6 </p>
         </div>
     </div>
 

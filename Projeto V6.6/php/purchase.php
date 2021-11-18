@@ -184,8 +184,8 @@
                             $_SESSION['cliente']. ",".
                             $_SESSION['u_id']. ",".
                             valTotal(). ",".
-                            $data. ",".
-                            $_SESSION['metodoPag']. ",".
+                            $data. ",'".
+                            $_SESSION['metodoPag']. "',".
                             $nParcel. ",".
                             $descount. ")";
 

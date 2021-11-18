@@ -111,9 +111,9 @@ function valTotal(){
   if($total > 500 && empty($_SESSION['vl_desconto'])){
     $total =  $total - ($total * (15/100));
   } else if (isset($_SESSION['vl_desconto']) && ($_SESSION['vl_desconto'] > 15)){
-    $total = $total * ($_SESSION['vl_desconto']/100);
+    $total =  $total - ($total * ($_SESSION['vl_desconto']/100));
   } else if(isset($_SESSION['vl_desconto']) && $_SESSION['vl_desconto'] > 0 ){
-    $total = $total * ($_SESSION['vl_desconto']/100);
+    $total =  $total - ($total * ($_SESSION['vl_desconto']/100));
   }
 
 
@@ -138,7 +138,7 @@ function showEmployees(){
   include 'connect.php';
 
   for($i = 0; $i <= numberOfEmployees(); $i++){
-      $sql = "SELECT id_funcionario, nm_funcionario, ds_rg, ds_cpf, vl_salario, ds_endereco, dt_nascimento, ds_cargo, ds_senha, ds_email FROM tb_funcionario where id_funcionario = $i;";
+      $sql = "SELECT id_funcionario, nm_funcionario, ds_rg, ds_cpf, vl_salario, ds_endereco, dt_nascimento, ds_cargo, ds_senha FROM tb_funcionario where id_funcionario = $i;";
 
       $dados = mysqli_query($conection, $sql);
       $linha = mysqli_fetch_assoc($dados);
@@ -170,9 +170,6 @@ function showEmployees(){
               </td>
               <td>
                 <p>".$linha['ds_cargo']."</p>
-              </td>
-              <td>
-                <p>".$linha['ds_email']."</p>
               </td>
             </tr>";
 

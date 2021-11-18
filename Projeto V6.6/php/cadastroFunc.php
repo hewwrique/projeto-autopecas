@@ -11,12 +11,11 @@ $salFunc = $_POST['salFunc'];
 $endFunc = $_POST['endFunc'];
 $nascFunc = $_POST['nascFunc'];
 $cargoFunc = $_POST['cargoFunc'];
-$emailFunc = $_POST['emailFunc'];
 
 switch($_POST['submit']){
 	
 	case "add":
-		if(empty($nameFunc) || empty($rgFunc) || empty($cpfFunc) || empty($salFunc) || empty($endFunc) || empty($nascFunc) || empty($cargoFunc) || empty($emailFunc)){
+		if(empty($nameFunc) || empty($rgFunc) || empty($cpfFunc) || empty($salFunc) || empty($endFunc) || empty($nascFunc) || empty($cargoFunc)){
 			header("Location: ../emplyeeMan.php?cadastro=Um dos campos está vazio");
 			exit();
 		
@@ -32,7 +31,7 @@ switch($_POST['submit']){
 			} else{
 				
 				//inserindo o usuário no banco de dados
-				$sqlI = "INSERT INTO tb_funcionario (nm_funcionario, ds_rg, ds_cpf, vl_salario, ds_endereco, dt_nascimento, ds_cargo, ds_email) VALUES ('$nameFunc', '$rgFunc', '$cpfFunc','$salFunc', '$endFunc', '$nascFunc', '$cargoFunc', '$emailFunc');";
+				$sqlI = "INSERT INTO tb_funcionario (nm_funcionario, ds_rg, ds_cpf, vl_salario, ds_endereco, dt_nascimento, ds_cargo) VALUES ('$nameFunc', '$rgFunc', '$cpfFunc','$salFunc', '$endFunc', '$nascFunc', '$cargoFunc');";
 				mysqli_query($conection, $sqlI);
 				header("Location: ../emplyeeMan.php?cadastro=Funcionário cadastrado com sucesso");
 				exit();
@@ -58,9 +57,8 @@ switch($_POST['submit']){
 				$end = $linha['ds_endereco'];
 				$nasc = $linha['dt_nascimento'];
 				$cargo = $linha['ds_cargo'];
-				$email = $linha['ds_email'];
 
-				header("Location: ../emplyeeMan.php?id=$id&nome=$nome&rg=$rg&cpf=$cpf&sal=$sal&end=$end&nasc=$nasc&cargo=$cargo&email=$email");
+				header("Location: ../emplyeeMan.php?id=$id&nome=$nome&rg=$rg&cpf=$cpf&sal=$sal&end=$end&nasc=$nasc&cargo=$cargo");
 				exit();
 
 
@@ -75,8 +73,8 @@ switch($_POST['submit']){
 		break;
 	
 	case "edit":
-		if(empty($idFunc) || empty($nameFunc) || empty($rgFunc) || empty($cpfFunc) || empty($salFunc) || empty($endFunc) || empty($nascFunc) || empty($cargoFunc) || empty($emailFunc)){
-			header("Location: ../emplyeeMan.php?id=$idFunc&nome=$nameFunc&rg=$rgFunc&cpf=$cpfFunc&sal=$salFunc&end=$endFunc&nasc=$nascFunc&cargo=$cargoFunc&email=$emailFunc&cadastro=Nenhum campo pode ficar vazio");
+		if(empty($idFunc) || empty($nameFunc) || empty($rgFunc) || empty($cpfFunc) || empty($salFunc) || empty($endFunc) || empty($nascFunc) || empty($cargoFunc)){
+			header("Location: ../emplyeeMan.php?id=$idFunc&nome=$nameFunc&rg=$rgFunc&cpf=$cpfFunc&sal=$salFunc&end=$endFunc&nasc=$nascFunc&cargo=$cargoFunc&cadastro=Nenhum campo pode ficar vazio");
 			exit();
 		} else {
 			$sql = "UPDATE tb_funcionario SET
@@ -86,8 +84,7 @@ switch($_POST['submit']){
 			 vl_salario = '$salFunc',
 			 ds_endereco = '$endFunc',
 			 dt_nascimento = '$nascFunc',
-			 ds_cargo = '$cargoFunc',
-			 ds_email = '$emailFunc'
+			 ds_cargo = '$cargoFunc'
 			 WHERE id_funcionario ='$idFunc'";
 			 mysqli_query($conection, $sql);
 			header("Location: ../emplyeeMan.php?cadastro=atualizado com sucesso");

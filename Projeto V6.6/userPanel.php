@@ -55,10 +55,6 @@
                             <label for="endFunc">Endereço</label></br>
                             <input type="text" disabled id="5Func" name="endereco" value="<?php echo $linha['ds_endereco']; ?>">
                         </div>
-                        <div class="col">
-                            <label for="email"> Email </label></br>
-                            <input type="email" disabled id="6Func" name="email " value="<?php echo $linha['ds_email']; ?>">
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -76,15 +72,9 @@
                             <label for="nascFunc">Data de nascimento</label></br>
                             <input type="date" disabled id="9Func" name="dtNasc" value="<?php echo $linha['dt_nascimento']; ?>">
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col">
                             <label for="cargoFunc">Cargo</label></br>
                             <input type="text" disabled id="10Func" value="<?php echo $linha['ds_cargo']; ?>">
-                        </div>
-                        <div class="col">
-                            <label for="metaFunc">Meta de vendas</label></br>
-                            <input type="number" disabled id="11Func">
                         </div>
                     </div>
                 </br>

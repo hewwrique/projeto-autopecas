@@ -50,10 +50,6 @@
                             <label for="endFunc">Endereço</label></br>
                             <input type="text" id="endFunc" name="endFunc" data-required value="<?php echo isset($_GET['end'])? $_GET['end']: '' ;?>">
                         </div>
-                        <div class="col">
-                            <label for="emailFunc">Email do Funcionário</label></br>
-                            <input type="email" id="emailFunc" name="emailFunc" data-required value="<?php echo isset($_GET['email'])? $_GET['email']: '' ;?>">
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -113,7 +109,6 @@
                         <th scope="col">Endereço</th>
                         <th scope="col">Data de Nascimento</th>
                         <th scope="col">Cargo</th>
-                        <th scope="col">Email</th>
                     </tr>
                     </thead>
                     <tbody>
